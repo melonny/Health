@@ -1,0 +1,14 @@
+# mysql
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/health
+    username: root
+    password: xuli19981109
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.hahaha.health.model
+
+server:
+  port: 9000
