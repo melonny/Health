@@ -14,4 +14,6 @@ public interface UserDao {
     public int getUserCounts(@Param("username") String username);
     public int updateState(@Param("id")Integer id, @Param("state") boolean state);
     public int addUser(User user);
+    public int editUser(User user);
+    public int deleteUser(@Param("id")Integer id);
 }

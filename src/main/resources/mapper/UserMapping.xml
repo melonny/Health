@@ -30,4 +30,14 @@
         insert into user(username, password, email, role, state)
         VALUE (#{username},#{password},#{email},#{role},#{state})
     </insert>
+
+    <update id="editUser">
+        update user set username=#{username},email=#{email},password=#{password}
+        where id=#{id}
+    </update>
+
+    <delete id="deleteUser">
+        delete from user
+        where id=#{id}
+    </delete>
 </mapper>

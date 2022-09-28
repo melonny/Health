@@ -5,10 +5,7 @@ import com.hahaha.health.dao.UserDao;
 import com.hahaha.health.entity.QueryInfo;
 import com.hahaha.health.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -43,6 +40,18 @@ public class UserController {
         user.setRole("普通用户");
         user.setState(false);
         int i = userDao.addUser(user);
+        return i > 0 ?"success":"error";
+    }
+
+    @PutMapping("/edituser")
+    public String editUser(@RequestBody User user){
+        int i = userDao.editUser(user);
+        return i > 0 ?"success":"error";
+    }
+
+    @DeleteMapping("deleteuser")
+    public String deleteUser(@RequestParam Integer id){
+        int i = userDao.deleteUser(id);
         return i > 0 ?"success":"error";
     }
 }
