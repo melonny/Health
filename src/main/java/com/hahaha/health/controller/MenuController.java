@@ -1,8 +1,8 @@
 package com.hahaha.health.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.hahaha.health.dao.MenuDAO;
 import com.hahaha.health.entity.mainMenu;
+import com.hahaha.health.service.menuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,13 +14,13 @@ import java.util.List;
 public class MenuController {
 
     @Autowired
-    MenuDAO menuDAO;
+    menuService menuservice;
 
     @RequestMapping("/menus")
     public String getAllMenus(){
         System.out.println("访问成功~");
         HashMap<String, Object> data = new HashMap<>();
-        List<mainMenu> menus = menuDAO.getMenus();
+        List<mainMenu> menus = menuservice.getMenus();
         if(menus!=null){
             data.put("menus",menus);
             data.put("flag",200);
