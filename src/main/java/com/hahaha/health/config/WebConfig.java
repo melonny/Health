@@ -1,4 +1,4 @@
-package com.hahaha.health.util;
+package com.hahaha.health.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
