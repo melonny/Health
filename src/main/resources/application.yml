@@ -17,6 +17,10 @@ spring:
   redis:
     host: localhost
     port: 6379
+  jwt:
+    ttl: 36000000
+    signature: XULI
+
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

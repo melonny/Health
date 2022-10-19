@@ -24,9 +24,9 @@ public class emailUtil {
         // 接收人 接收者邮箱
         message.setTo(new String[]{email});
         //邮件标题
-        message.setSubject("MemorySpace账号验证码：");
+        message.setSubject("账号验证码：");
         //邮件验证码
-        message.setText("【Memory】验证码：<a>"+num+"</a>，用于账号验证码登录，5分钟内有效。验证码提供给他人可能导致帐号被盗，请勿泄露，谨防被骗。");
+        message.setText("【XULI】验证码：<a>"+num+"</a>，用于账号验证码登录，5分钟内有效。验证码提供给他人可能导致帐号被盗，请勿泄露，谨防被骗。");
         System.out.println(javaMailSender);
         javaMailSender.send(message);
         return String.valueOf(num);
