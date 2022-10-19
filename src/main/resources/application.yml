@@ -4,10 +4,10 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/health
     username: root
-    password: xuli19981109
+    password: 
   mail:
-    username: 1017156500@qq.com
-    password: nejxpmvgpxdybfce
+    username: 
+    password: 
     host: smtp.qq.com
     port: 465
     default-encoding: utf-8
