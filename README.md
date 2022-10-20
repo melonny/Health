@@ -1,6 +1,6 @@
 # Health
-xxx platform based on SpringBoot, not decided.
-basic functions first, others later.
+xxx platform based on SpringBoot, not decided.  
+basic functions first, others later.  
 
 ## Updates
 2022-9-28 完成登录以及增删改查  
