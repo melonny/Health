@@ -3,7 +3,7 @@ xxx platform based on SpringBoot, not decided. maybe health
 basic functions first, others later.  
 
 ## Updates
-2022-9-28 完成登录以及增删改查  
-2022-10-11 改成mapper-service-controller三层结构，增加全局异常类  
-2022-10-17 增加邮箱认证功能，使用redis存放  
-2022-10-19 增加jwt鉴权，前后端联调完成  
+2022-9-28 login, CRUD done    
+2022-10-11 convert to mapper-service-controller structure，add Exception Class    
+2022-10-17 add mail authorization, token is stored in redis    
+2022-10-19 add jwt, both server-side and client-side done!    
