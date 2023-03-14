@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hahaha.health.mapper.userDetail.personalProfileMapper">
+    <select id="selectProfileById" resultType="com.hahaha.health.entity.userDetail.personalProfile">
+        select * from personal_profile
+        where id = #{id}
+    </select>
+
+    <update id="changeProfile">
+        update personal_profile set sex = #{sex}, age = #{age}, height = #{height}, weight = #{weight}
+        where id = #{id}
+    </update>
+
+    <insert id="addProfile">
+        insert into personal_profile(sex, age, height, weight)
+        value (#{sex}, #{age}, #{height}, #{weight})
+    </insert>
+</mapper>

@@ -5,6 +5,20 @@ spring:
     url: jdbc:mysql://localhost:3306/health
     username: root
     password: xuli19981109
+  mail:
+    username: 
+    password: 
+    host: smtp.qq.com
+    port: 465
+    default-encoding: utf-8
+    protocol: smtps
+  redis:
+    host: localhost
+    port: 6379
+  jwt:
+    ttl: 36000000
+    signature: XULI
+
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

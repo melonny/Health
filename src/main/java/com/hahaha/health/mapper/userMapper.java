@@ -16,4 +16,5 @@ public interface userMapper {
     public int addUser(User user);
     public int editUser(User user);
     public int deleteUser(@Param("id")Integer id);
+    public User selectUserById(@Param("id")Integer id);
 }
