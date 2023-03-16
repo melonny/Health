@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 @Service
@@ -42,4 +43,8 @@ public class userService {
     }
 
     public User selectUserById(Integer id){ return usermapper.selectUserById(id);  }
+
+    public int eatFood(Integer userId, Integer foodId, Timestamp eatTime){
+        return usermapper.eatFood(userId, foodId, eatTime);
+    }
 }

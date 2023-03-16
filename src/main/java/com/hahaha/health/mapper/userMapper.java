@@ -4,6 +4,7 @@ import com.hahaha.health.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 @Mapper
@@ -17,4 +18,5 @@ public interface userMapper {
     public int editUser(User user);
     public int deleteUser(@Param("id")Integer id);
     public User selectUserById(@Param("id")Integer id);
+    public int eatFood(@Param("user_id")Integer userId, @Param("food_id")Integer foodId, @Param("eat_time")Timestamp eatTime);
 }

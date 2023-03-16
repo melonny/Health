@@ -3,12 +3,15 @@ package com.hahaha.health.controller;
 import com.alibaba.fastjson.JSON;
 import com.hahaha.health.entity.QueryInfo;
 import com.hahaha.health.entity.User;
+import com.hahaha.health.entity.mainMenu;
 import com.hahaha.health.entity.userRegister;
 import com.hahaha.health.service.userService;
 import com.hahaha.health.util.redisUtil;
+import com.hahaha.health.util.tokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.List;
 
@@ -19,6 +22,8 @@ public class UserController {
     userService userservice;
     @Autowired
     redisUtil redis;
+    @Autowired
+    tokenUtil tokenutil;
 
     @RequestMapping("/alluser")
     public String getUserList(QueryInfo queryInfo){
@@ -66,5 +71,19 @@ public class UserController {
     public String deleteUser(@RequestParam Integer id){
         int i = userservice.deleteUser(id);
         return i > 0 ?"success":"error";
+    }
+
+    @PostMapping("/eat")
+    public String eatFood(@RequestHeader("Authorization")String token,
+                          @RequestParam("foodId")Integer foodId,
+                          @RequestParam("timeStamp")Timestamp timestamp){
+        User tokenuser = tokenutil.jwtParser(token);
+        User user = null;
+        if(tokenuser != null) user = userservice.selectUserById(tokenuser.getId());
+        if(user == null){
+            return "eatFail";
+        }else{
+            return userservice.eatFood(user.getId(), foodId, timestamp)>0?"eatSuccess":"eatFail";
+        }
     }
 }
